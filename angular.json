@@ -24,6 +24,11 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/onsenui/css/onsenui.css",
+              "node_modules/onsenui/css/onsenui-fonts.css",
+              "node_modules/onsenui/css/onsen-css-components.css",
+              "node_modules/onsenui/css/ionicons/css/ionicons.css",
+              "node_modules/weathericons/css/weather-icons.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -88,6 +93,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/onsenui/css/onsenui.css",
+              "node_modules/onsenui/css/onsen-css-components.css",
               "src/styles.css"
             ],
             "scripts": []

@@ -1,0 +1,37 @@
+<div style="text-align: center; margin: 10px; margin-top: 20px;">
+  <ons-range [(value)]="brightness" style="width: 100%;" (change)="brightnessChanged($event)"></ons-range><br>
+  <!-- TODO dynamic text -->
+  <div style="text-align: left;">Brightness:</div>{{brightness}}
+</div>
+
+<div style="text-align: left; margin: 10px">
+  <!-- TODO dynamic text -->
+  Fade strip during nighttime:
+  <ons-icon icon="md-info" class="right" (click)="helpDialog.show()"></ons-icon>
+
+  <div style="text-align: right">
+    <ons-switch [(value)]="fadingOn" (change)="brightnessChanged($event)"></ons-switch>
+  </div>
+</div>
+
+<div style="text-align: center; margin: 10px">
+  <ons-range [(value)]="brightnessMin" [(disabled)]="!fadingOn" style="width: 100%;" (change)="brightnessChanged($event)"></ons-range><br>
+  <!-- TODO dynamic text -->
+  <div style="text-align: left;">Nightime brightness:</div>{{brightnessMin}}
+</div>
+
+
+
+
+<ons-alert-dialog cancelable #helpDialog>
+  <!-- TODO dynamic text -->
+  <div class="alert-dialog-title">Nighttime fading Info</div>
+  <!-- TODO dynamic text -->
+  <div class="alert-dialog-content">
+    By activating the nighttime mode, Catatumbo strip will automatically lower the brightness after your local sunset time until sunrise.
+  </div>
+  <div class="alert-dialog-footer">
+    <!-- TODO dynamic text -->
+    <ons-alert-dialog-button (click)="helpDialog.hide()">OK</ons-alert-dialog-button>
+  </div>
+</ons-alert-dialog>

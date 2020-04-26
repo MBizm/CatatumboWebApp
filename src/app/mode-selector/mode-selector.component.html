@@ -1,0 +1,37 @@
+<!-- ##### NAVIGATOR CONTENT - MODE SELECTOR #### -->
+<img id="headerImage" src="{{this.imgSrc}}" width="100%" />
+
+<ons-list modifier="inset">
+  <ons-list-header>
+    <div class="list-item">
+      <div class="left">
+        Selected Mode&nbsp;&nbsp;
+      </div>
+      <div class="right">
+        <ons-icon icon="md-info" class="right" onclick="showHelpDialog()"></ons-icon>
+      </div>
+    </div>
+  </ons-list-header>
+  <ons-list-item tappable (click)='onModeSelect($event, 1);'>
+    <label class="left">
+      <ons-radio input-id="modeSelect_weather" name="modeSelect" checked="{{this.mode == 1}}"></ons-radio>
+    </label>
+    <label for="modeSelect_weather" class="center">
+      Weather Forecast
+    </label>
+    <div class="right">
+      <ons-icon icon="md-face" class="list-item__icon"></ons-icon>
+    </div>
+  </ons-list-item>
+  <ons-list-item modifier="tappable" (click)='onModeSelect($event, 2);'>
+    <label class="left">
+      <ons-radio input-id="modeSelect_share" name="modeSelect" checked="{{this.mode == 2}}"></ons-radio>
+    </label>
+    <label for="modeSelect_share" class="center">
+      Share Price Ticker
+    </label>
+    <div class="right">
+      <ons-icon icon="md-home" class="list-item__icon"></ons-icon>
+    </div>
+  </ons-list-item>
+</ons-list>

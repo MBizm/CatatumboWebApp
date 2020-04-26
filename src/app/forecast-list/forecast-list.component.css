@@ -1,0 +1,65 @@
+.flex-wrapper-center {
+  display:flex;
+  text-align:center;
+  width: 100%;
+  margin: 10px;
+  margin-top: 20px;
+}
+
+.flex-element-row {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-element-column {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-element-column-reverse {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column-column-reverse;
+}
+
+.item-text-vlarge {
+  font-size:48px;
+  margin: 3px;
+}
+
+.item-text-large {
+  font-size:36px;
+  margin: 5px;
+}
+
+.item-text-medium {
+  font-size:18px;
+  margin: 5px;
+}
+
+.item-text-small {
+  font-size:12px;
+  margin: 5px;
+}
+
+
+
+
+/* DivTable.com */
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+
+.divTableCell {
+	display: table-cell;
+}
+
+.divTableBody {
+	display: table-row-group;
+}

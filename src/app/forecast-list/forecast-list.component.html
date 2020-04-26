@@ -1,0 +1,121 @@
+<div class="flex-wrapper-center">
+    <div class="flex-element-column">
+      <i class="wi wi-sunrise item-text-large"></i>
+      <!-- TODO get value -->
+      <div class="item-text-medium">09:00</div>
+    </div>
+    <div class="flex-element-column">
+      <i class="wi wi-day-sunny item-text-large"></i>
+      <!-- TODO get value -->
+      <div class="item-text-medium">15%</div>
+    </div>
+    <div class="flex-element-column">
+      <i class="wi wi-sunset item-text-large"></i>
+      <!-- TODO get value -->
+      <div class="item-text-medium">18:00</div>
+    </div>
+</div>
+
+<ons-list>
+  <ng-container *ngFor="let item of weather_conditions; let i = index">
+    <ons-list-header *ngIf="i == 0 || item.day - weather_conditions[i - 1].day != 0">
+      {{item.date}}
+    </ons-list-header>
+
+    <ons-list-item tappable="true" (click)="toggle=!toggle" class="list__item">
+
+      <div class="divTable" style="width: 100%;">
+        <div class="divTableBody" style="text-align:center;">
+          <div class="divTableRow">
+
+            <div class="divTableCell" style="min-width:10%">
+              <div class="divTable">
+                <div class="divTableBody">
+                  <div class="divTableRow">
+                    <div class="left">
+                  		<div style="color: rgb(255,255,255); text-align: center; width: 49px; height: 49px; line-height: 30px; border-radius: 24px; font-size: 14px; background-color: rgb({{item.color[0]}}, {{item.color[1]}}, {{item.color[2]}});">
+                  			<i class="wi wi-owm-{{item.OWMcode}} item-text-large"></i>
+                  		</div>
+                  	</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="divTableCell" style="min-width:25%">
+              <div class="divTable">
+                <div class="divTableBody">
+                  <div class="divTableRow">
+                    <div class="divTableCell item-text-large">{{item.temp.toFixed(0)}}&deg;</div>
+                  </div>
+                  <div class="divTableRow">
+                    <div class="divTableCell item-text-small">Celsius</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="divTableCell" style="min-width:25%">
+              <div class="divTable">
+                <div class="divTableBody">
+                  <div class="divTableRow">
+                    <div class="divTableCell item-text-large">{{item.rain}}</div>
+                  </div>
+                  <div class="divTableRow">
+                    <div class="divTableCell item-text-small">mm rain</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="divTableCell item-text-small">
+              <div class="divTable">
+                <div class="divTableBody">
+                  <div class="divTableRow">
+                    <div class="divTableCell">{{toggle ? item.cloud : item.pressure}}</div>
+                    <div class="divTableCell">{{toggle ? "% cloud" : "hPa"}}</div>
+                  </div>
+                  <div class="divTableRow">
+                    <div class="divTableCell">{{toggle ? item.wind : item.humidity}}</div>
+                    <div class="divTableCell">{{toggle ? "m/s" : "% humid"}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="divTableCell" style="min-width:20%">
+              <div class="divTable">
+                <div class="divTableBody">
+                  <div class="divTableRow">
+                    <div style="text-align: right;">
+                      {{item.time}}
+                  	</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- DivTable.com -->
+
+    <!-- DAT HAT SCHONMAL GANZ GUT GEKLAPPT
+      <div style="width:100%">
+        <div class="flex-wrapper-center item-text-large">
+          <div class="flex-element-row">{{item.temp.toFixed(0)}}°&nbsp;C</div>
+          <div class="flex-element-row">{{item.rain}}&nbsp;mm</div>
+        </div>
+        <div class="flex-wrapper-center item-text-small">
+          <div>{{item.cloud}}</div>
+          <div>{{item.wind}}&nbsp;m/s</div>
+        </div>
+        <div class="flex-element-row"></div>
+    	</div>
+    -->
+    	<div class="right" style="font-size: 20px; color: rgb(202, 202, 202);">
+
+    	</div>
+    </ons-list-item>
+  </ng-container>
+</ons-list>
