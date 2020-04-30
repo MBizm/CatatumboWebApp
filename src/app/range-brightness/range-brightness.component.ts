@@ -5,7 +5,7 @@ import {
 } from 'ngx-onsenui';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import * as ons from 'onsenui';
-import * as JSON5 from 'JSON5';
+import * as JSON5 from 'json5';
 
 @Component({
   selector: 'app-range-brightness',

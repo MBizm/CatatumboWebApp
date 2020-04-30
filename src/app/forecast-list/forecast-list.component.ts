@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as JSON5 from 'JSON5';
+import * as JSON5 from 'json5';
 
 @Component({
   selector: 'app-forecast-list',
