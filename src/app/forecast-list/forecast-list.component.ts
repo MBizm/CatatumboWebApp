@@ -85,9 +85,9 @@ export class ForecastListComponent implements OnInit {
           this.toastState(false);
       }
     }.bind(this);
-    // TODO set url dynamically - check global variable: https://stackoverflow.com/questions/43991306/angular-4-5-6-global-variables
-    xhr.open("GET", "http://192.168.178.55:8080/catatumbo/forecast/getConditions", true);
-    //xhr.open("GET", "./catatumbo/forecast/getConditions", true);
+
+	//request data from local endpoint on port 8080
+    xhr.open("GET", location.protocol + "//" + location.hostname + ":8080" + "/catatumbo/forecast/getConditions", true);
     xhr.send();
   }
 }
